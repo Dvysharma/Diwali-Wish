@@ -372,11 +372,6 @@ window.diyaSongPlayer.preload = 'auto';
 window.diyaSongPlayer.loop = false;
 window.diyaSongPlayer.volume = 0.55;
 
-window.websiteMusicPlayer = new Audio('assets/audio/Jai%20diwali%20jethalal%20song%23diwali%20song.mp3');
-window.websiteMusicPlayer.preload = 'auto';
-window.websiteMusicPlayer.loop = true;
-window.websiteMusicPlayer.volume = 0.5;
-
 window.playDiyaSong = function() {
     if (!window.diyaSongPlayer) return;
 
@@ -388,39 +383,4 @@ window.playDiyaSong = function() {
     if (playPromise && typeof playPromise.then === 'function') {
         playPromise.catch(() => {});
     }
-};
-
-window.toggleWebsiteMusic = function() {
-    if (!window.websiteMusicPlayer) return false;
-
-    if (window.websiteMusicPlayer.paused) {
-        try {
-            const trimmedStart = 2;
-            if (window.websiteMusicPlayer.currentTime < trimmedStart || window.websiteMusicPlayer.currentTime === 0) {
-                window.websiteMusicPlayer.currentTime = trimmedStart;
-            }
-        } catch (e) {}
-
-        const promise = window.websiteMusicPlayer.play();
-        if (promise && typeof promise.then === 'function') {
-            promise.catch(() => {});
-        }
-        return true;
-    }
-
-    window.websiteMusicPlayer.pause();
-    return false;
-};
-
-window.pauseWebsiteMusic = function() {
-    if (!window.websiteMusicPlayer) return;
-    window.websiteMusicPlayer.pause();
-};
-
-window.stopWebsiteMusic = function() {
-    if (!window.websiteMusicPlayer) return;
-    window.websiteMusicPlayer.pause();
-    try {
-        window.websiteMusicPlayer.currentTime = 2;
-    } catch (e) {}
 };

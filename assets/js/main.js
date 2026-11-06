@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Audio Engine & Controls (Instant Pause Everywhere)
     // -------------------------------------------------------------------------
     const filmMusicToggleBtn = document.getElementById('film-music-toggle');
-    const themeMusicBtn = document.getElementById('theme-music-btn');
 
     if (window.cinematicAudio) {
         if (filmMusicToggleBtn) {
@@ -34,26 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         };
-    }
-
-    function updateThemeMusicButtonState(isPlaying) {
-        if (!themeMusicBtn) return;
-        if (isPlaying) {
-            themeMusicBtn.innerHTML = '<span>🎵 Pause Music</span>';
-            themeMusicBtn.classList.add('primary');
-        } else {
-            themeMusicBtn.innerHTML = '<span>🎵 Play Music</span>';
-            themeMusicBtn.classList.remove('primary');
-        }
-    }
-
-    if (themeMusicBtn) {
-        updateThemeMusicButtonState(false);
-
-        themeMusicBtn.addEventListener('click', () => {
-            const isPlaying = window.toggleWebsiteMusic();
-            updateThemeMusicButtonState(isPlaying);
-        });
     }
 
     // -------------------------------------------------------------------------
