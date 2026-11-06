@@ -289,6 +289,18 @@ body {
         padding-right: 14px;
     }
 
+    .story-chapter {
+        grid-template-columns: 1fr;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .chapter-visual,
+    .chapter-img {
+        min-height: 260px;
+        border-radius: 18px;
+    }
+
     .chapter-content {
         gap: 0.9rem;
     }
@@ -365,6 +377,11 @@ body {
 
     .btn-hero-play {
         width: 100%;
+    }
+
+    .chapter-visual,
+    .chapter-img {
+        min-height: 220px;
     }
 
     .chapter-tag {
@@ -515,6 +532,39 @@ body {
     gap: clamp(60px, 10vh, 120px);
     position: relative;
     z-index: 10;
+}
+
+.story-chapter {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 30px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    position: relative;
+    z-index: 10;
+}
+
+.chapter-visual {
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    background: rgba(12, 14, 24, 0.8);
+}
+
+.chapter-img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius-lg);
 }
 
 /* Floating Question Marks for Ch 1 & 2 */

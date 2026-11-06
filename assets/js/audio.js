@@ -22,7 +22,7 @@ class CinematicAudioEngine {
             this.audio = new Audio(this.audioPath);
             this.audio.loop = true;
             this.audio.preload = 'auto';
-            this.audio.volume = 0.7;
+            this.audio.volume = 0.5;
             this.audio.crossOrigin = 'anonymous';
         }
 
@@ -55,7 +55,7 @@ class CinematicAudioEngine {
             this.audio = new Audio(this.audioPath);
             this.audio.loop = true;
             this.audio.preload = 'auto';
-            this.audio.volume = 0.7;
+            this.audio.volume = 0.5;
             this.audio.crossOrigin = 'anonymous';
         }
 
@@ -66,7 +66,7 @@ class CinematicAudioEngine {
 
         // Master Gain
         this.masterGain = this.ctx.createGain();
-        this.masterGain.gain.setValueAtTime(0.22, this.ctx.currentTime);
+        this.masterGain.gain.setValueAtTime(0.14, this.ctx.currentTime);
 
         // Light reflective ambience for a bright playful feel.
         this.reverbNode = this.createReverb(1.7, 0.016);
@@ -370,7 +370,12 @@ window.themeAudio = new CinematicAudioEngine({
 window.diyaSongPlayer = new Audio('assets/audio/Jethalal%20Happy%20Diwali%20Song!.mp3');
 window.diyaSongPlayer.preload = 'auto';
 window.diyaSongPlayer.loop = false;
-window.diyaSongPlayer.volume = 0.85;
+window.diyaSongPlayer.volume = 0.55;
+
+window.websiteMusicPlayer = new Audio('assets/audio/Jai%20diwali%20jethalal%20song%23diwali%20song.mp3');
+window.websiteMusicPlayer.preload = 'auto';
+window.websiteMusicPlayer.loop = true;
+window.websiteMusicPlayer.volume = 0.5;
 
 window.playDiyaSong = function() {
     if (!window.diyaSongPlayer) return;
@@ -383,4 +388,39 @@ window.playDiyaSong = function() {
     if (playPromise && typeof playPromise.then === 'function') {
         playPromise.catch(() => {});
     }
+};
+
+window.toggleWebsiteMusic = function() {
+    if (!window.websiteMusicPlayer) return false;
+
+    if (window.websiteMusicPlayer.paused) {
+        try {
+            const trimmedStart = 2;
+            if (window.websiteMusicPlayer.currentTime < trimmedStart || window.websiteMusicPlayer.currentTime === 0) {
+                window.websiteMusicPlayer.currentTime = trimmedStart;
+            }
+        } catch (e) {}
+
+        const promise = window.websiteMusicPlayer.play();
+        if (promise && typeof promise.then === 'function') {
+            promise.catch(() => {});
+        }
+        return true;
+    }
+
+    window.websiteMusicPlayer.pause();
+    return false;
+};
+
+window.pauseWebsiteMusic = function() {
+    if (!window.websiteMusicPlayer) return;
+    window.websiteMusicPlayer.pause();
+};
+
+window.stopWebsiteMusic = function() {
+    if (!window.websiteMusicPlayer) return;
+    window.websiteMusicPlayer.pause();
+    try {
+        window.websiteMusicPlayer.currentTime = 2;
+    } catch (e) {}
 };
