@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Light, A Lot of Gratitude ✨ Happy Diwali</title>
+
+    <!-- Meta Tags for Social & Link Previews -->
+    <meta name="description" content="A heartwarming cinematic Diwali greeting celebrating kindness, patience, and wonderful mentorship.">
+    <meta property="og:title" content="A Little Light, A Lot of Gratitude ✨ Happy Diwali">
+    <meta property="og:description" content="Some people make ordinary days a little brighter... Thank you for being one of those people.">
+    <meta property="og:image" content="assets/images/scene5.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Interactive Canvas Layer for Golden Embers, Falling Petals & Sparkle Bursts -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Top Navigation Bar -->
+    <header class="top-nav">
+        <a href="#hero" class="brand">
+            <span class="diya-icon">🪔</span>
+            <span>A Little Light</span>
+        </a>
+        <div class="nav-actions">
+            <!-- Auto-Play Cinematic Short Film Button -->
+            <button id="start-film-btn" class="btn-pill primary" title="Watch 55s Animated Short Film">
+                <span>▶ Watch Film</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <h1 class="hero-title">A Little Light,<br>A Lot of Gratitude</h1>
+            <p class="hero-subtitle">
+                Dedicated to you — whose patience, warm guidance, and reassuring smile turned my whirlwind of confusion into a journey of confidence.
+            </p>
+            <div class="hero-actions">
+                <button id="hero-play-film-btn" class="btn-hero-play">
+                    <span>▶ Play Short Film</span>
+                </button>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll to begin</span>
+                <span>↓</span>
+            </div>
+        </section>
+
+        <!-- CHAPTER 5: THE LIGHT OF GRATITUDE -->
+        <article id="chapter-5" class="story-chapter" data-chapter="5" data-title="The Light of Gratitude">
+            <div class="chapter-visual">
+                <img src="assets/images/scene5.jpg" alt="Presenting glowing Diya in Diwali decorated office" class="chapter-img" loading="lazy">
+                <div class="visual-overlay"></div>
+            </div>
+            <div class="chapter-content">
+                <div class="chapter-tag">
+                    <span>🪔 The Sacred Flame</span>
+                </div>
+                <h2 class="chapter-title">The Light of Gratitude</h2>
+                <p class="chapter-text">
+                    As Diwali fills the world around us with warmth and light, I wanted to take a moment to express something beyond the celebrations.<br><br>
+
+                    This is a small gesture of heartfelt appreciation from me to you. Thank you for being like a diya in my corporate journey, bringing light, clarity and reassurance during a time when everything was completely new and unfamiliar.<br><br>
+
+                    Your patience, kindness and willingness to help have meant more than you probably realise. Sometimes, the smallest gestures leave the brightest impressions.<br><br>
+
+                    And this Diwali, I just wanted you to know that yours certainly did. ❤️
+                </p>
+
+                <div class="diya-interactive-box" id="interactive-diya-wrapper">
+                    <div class="diya-flame-container" title="Click to light the Diya">
+                        <canvas id="diya-flame-canvas"></canvas>
+                        <div class="clay-diya-base">
+                            <div class="clay-diya-rim"></div>
+                        </div>
+                        <span class="diya-unlit-hint">Tap to light</span>
+                    </div>
+                    <button id="light-diya-btn" class="btn-light-diya">
+                        <span>🪔 Light the Diya of Gratitude</span>
+                    </button>
+                    <div class="diya-reveal-text" id="diya-reveal-quote">
+                        "Thank you for being like a diya in my corporate journey." ✨
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- CHAPTER 6: GRAND FINALE GREETING CARD -->
+        <section id="chapter-6" class="finale-card-section" data-chapter="6" data-title="A Little Thank You">
+            <div class="story-container">
+                <div class="finale-card">
+                    <div class="finale-sparkle-decor">✨ 🪔 ✨</div>
+                    <h2 class="finale-salutation">Happy Diwali! ✨</h2>
+
+                    <div class="finale-message-block">
+                        <p class="finale-line">Some people make ordinary days a little brighter.</p>
+                        <p class="finale-line">Some people make difficult things a little easier.</p>
+                        <p class="finale-line">And some people deserve a little extra appreciation.</p>
+                        <p class="finale-line highlight">Thank you for being one of those people. 💖</p>
+
+                        <div class="diwali-greeting-banner">
+                            Wishing you a very Happy Diwali!
+                        </div>
+
+                        <p class="finale-signoff">
+                            With gratitude, Divyanshu.
+                        </p>
+                    </div>
+
+                    <!-- Clean Action Buttons -->
+                    <div class="finale-actions">
+                        <button id="download-card-btn" class="btn-card-action download">
+                            <span>🖼️ Download Greeting Card (PNG)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FULLSCREEN CINEMATIC SHORT FILM MODAL -->
+    <div id="film-modal" class="film-modal" role="dialog" aria-modal="true" aria-label="Cinematic Diwali Short Film">
+        <div class="film-header">
+            <span class="film-title-tag">✨ A Little Light, A Lot of Gratitude</span>
+            <button id="close-film-btn" class="btn-close-film" aria-label="Close Film">✕</button>
+        </div>
+
+        <div class="film-viewport">
+            <!-- Slide 1: First Day -->
+            <div class="film-slide active">
+                <img src="assets/images/scene1.jpg" alt="First Day at Work" class="film-slide-img">
+                <div class="film-slide-caption">
+                    <p class="slide-quote">Entering a new world with spreadsheets, emails, and a thousand questions.</p>
+                </div>
+            </div>
+
+            <!-- Slide 2: The Repeated Questions Gag -->
+            <div class="film-slide">
+                <img src="assets/images/scene2.jpg" alt="Asking questions repeatedly" class="film-slide-img">
+                <div class="film-slide-caption">
+                    <p class="slide-quote">Asking you the same question again and again... met only with your warm, patient smile.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3: Mentorship -->
+            <div class="film-slide">
+                <img src="assets/images/scene3.jpg" alt="Side by side guidance" class="film-slide-img">
+                <div class="film-slide-caption">
+                    <p class="slide-quote">You pulled up a chair and broke down the work step-by-step with genuine encouragement.</p>
+                </div>
+            </div>
+
+            <!-- Slide 4: Growth / Fresher Learning -->
+            <div class="film-slide">
+                <img src="assets/images/scene4.jpg" alt="Learning and growing" class="film-slide-img">
+                <div class="film-slide-caption">
+                    <p class="slide-quote">I'm still very much a fresher, but your patient support makes every day easier and brighter.</p>
+                </div>
+            </div>
+
+            <!-- Slide 5: Diwali Magic -->
+            <div class="film-slide">
+                <img src="assets/images/scene5.jpg" alt="Offering the Diya" class="film-slide-img">
+                <div class="film-slide-caption">
+                    <p class="slide-quote">Thank you for being a light like a diya for me in this corporate world. ✨</p>
+                </div>
+            </div>
+
+            <!-- Slide 6: Finale -->
+            <div class="film-slide">
+                <img src="assets/images/scene5.jpg" alt="Diwali Finale Celebration" class="film-slide-img">
+                <div class="film-slide-caption">
+                    <p class="slide-quote">Thank you for making ordinary days brighter and difficult things easier. Happy Diwali!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Timeline Controls: Clean Scrub Bar, Play/Pause, Time, Music Toggle -->
+        <div class="film-controls">
+            <div class="film-progress-container" id="film-progress-container" title="Click or drag to scrub video ahead / back">
+                <div id="film-progress-bar" class="film-progress-bar"></div>
+                <div id="film-seek-thumb" class="film-seek-thumb"></div>
+            </div>
+            <div class="film-control-row">
+                <div class="film-control-group">
+                    <button id="film-play-pause" class="btn-film-action">⏸ Pause</button>
+                </div>
+                <div class="film-control-group center">
+                    <span id="film-time-current">0:00</span> / <span>0:55</span>
+                </div>
+                <div class="film-control-group">
+                    <button id="film-music-toggle" class="btn-film-action music-btn active" title="Pause / Play Festive Music">🔊 Music: Playing</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>Wishing you a wonderful, joyful, and blessed Diwali! 🪔✨</p>
+        <p>With gratitude, Divyanshu</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/audio.js"></script>
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
